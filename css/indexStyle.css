@@ -1,0 +1,73 @@
+/*
+TITLE: Course Page Styling
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 01/09/2013
+PURPOSE: To style the course page html file
+LAST MODIFIED ON: 27 Aug 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+09 Jan 2013 - File creation
+27 Aug 2022 - Refactored from index.html (ASJ)
+*/
+
+* {
+	margin:0 0 6px;
+}
+ 
+header {
+	text-align:left;
+	color:#B1E1FF;
+	background-color:#9C9EFE;
+	padding:30px 150px;
+}
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+}
+body p {
+	padding-left: 2em;
+}
+
+li, li a {						/* Define the formatting for the links to the labs */
+	list-style: none;
+	background-color: #A66CFF;
+	text-align: center;
+	color: #B1E1FF;
+	border-radius: 3px;
+	padding: 2px;
+}
+
+h2 {
+	width: 100%;
+	color: #AFB4FF;
+	line-height: 40px;
+}
+
+h3 {
+	color: #A66CFF;
+	line-height: 30px;
+	text-align: center;
+  font-size: 30px;
+}
+
+#assignments {			/* Define the formatting for the <div id="asssignments"> box */
+	width: 720px;
+	margin: 0 auto;
+	box-shadow: 0 2px 15px #EEE;
+	min-height: 300px;
+	padding: 15px;
+	border-radius: 10px;
+	background-color: #AFB4FF;
+}
+
+#assignments ul {
+	float:left;
+	width: 300px;
+}
+
+hr {						/* Define the formatting for the <hr /> line between "Course Work" and lab links */
+	margin: 10px 0;
+	width: 100%;
+	float: left;
+}

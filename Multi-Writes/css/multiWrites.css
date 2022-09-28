@@ -1,0 +1,27 @@
+/*
+TITLE: Multi-Writes Stylesheet
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 9/9/22
+PURPOSE: To style the Multi-Writes html file
+LAST MODIFIED ON: 9 Sep 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+9 September 2022: Initial creation.
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.jstext {
+  color: white;
+  font-size: x-large;
+}
+
+img {
+  width:  500px;
+  height: 500px;
+  object-fit: cover;
+}

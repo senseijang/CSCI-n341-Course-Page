@@ -1,0 +1,16 @@
+/*
+TITLE: JS Hello World Styling
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 9/2/22
+PURPOSE: To style the JS Hello World html file
+LAST MODIFIED ON: 2 Sep 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+2 September 2022: Initial creation.
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}

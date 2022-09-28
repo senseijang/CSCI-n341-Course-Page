@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+/**************************************
+ Filename: idstyle.css
+ Author: Andy Jang (ASJ)
+ Create Date: 2 September 2022
+ Purpose: Provide colors for simple.html
+ Modification History:
+ 2 September 2022: Changed BG color.
+ 2 September 2022: Provided all styling for idstyle.html
+**************************************/
+
+body {
+	background-color: #A66CFF;
+  text-align: center;
+}
+
+#Baratie {
+  color: teal
+}
+
+#ThousandSunny {
+  color: gold
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  width:  500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+p {
+  font-size: large;
+}
+
+.portrait {
+  width:  250px;
+  height: 250px;
+  object-fit: cover;
+}

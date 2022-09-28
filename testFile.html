@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--
+ Filename: testFile.html
+ Written by: Andy Jang
+ Purpose: Produce a web page with alert functionality
+ Date: 26 August 2022
+ Modification Original Build:
+ 15 Jun 2015: Fix double-dash error in header block comment (LJC)
+ 04 Sep 2015: Correct an error in the jQuery library comment (LJC)
+ 07 Dec 2015: Use new css structure with nSeriesCommon/css files (LJC)
+ 18 Jan 2016: Change CSS info (LJC)
+ 15 Jan 2018: Update link to current jQuery library (LJC)
+ 21 Dec 2018: Updated Google-hosted jQuery library to version 3.3.1 (LJC)
+ 27 Aug 2022: Customized page for Web Page Redux (ASJ)
+ 2 Sep 2022: Changed pathing for externalAlert.js (ASJ)
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Begin every html page with everything up to this point (just use your own header block) -->
+    <!-- Also, feel free to remove all the instructional comments as you modify this file to make it yours. -->
+
+    <!-- This <title> displays in the page tab -->
+    <title>testFile</title>
+
+    <!-- This will link to your CSS stylesheet for formatting as soon as you create the file. The page will work without it, though. -->
+    <link rel="stylesheet" href="./css/testFileStyle.css" type="text/css" />
+
+    <!-- This links to the jQuery library so your js code will work 
+         Always include this *before* your own js code (extremely important) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- This links to the js code specific for this page -->
+    <script src="./js/externalAlert.js"></script>
+  </head>
+
+  <body>
+    <!-- This is the text that displays on the page -->
+    <h1>A test file for our first web assignment!</h1>
+    <p>
+      Webpages are fun to work with especially if you have cool JavaScript to
+      enhance it's functionality
+    </p>
+    <!-- Image to display on the web page -->
+    <img src="./images/thumbsup.png" alt="smiley thumbs up picture" />
+    <br /><br />
+    <!-- redirects back to the first page -->
+    <a href="./index.html">Go back</a>
+  </body>
+</html>

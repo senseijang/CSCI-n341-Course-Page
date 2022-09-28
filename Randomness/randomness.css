@@ -1,0 +1,22 @@
+/*
+TITLE: randomness.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 9/27/22
+PURPOSE: To style randomness.html
+LAST MODIFIED ON: 9/27/22
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+9/27/22 Initial creation
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Comic Sans MS", sans-serif;
+  text-align: center;
+}
+
+img {
+  width:  200px;
+  height: 200px;
+  object-fit: cover;
+}

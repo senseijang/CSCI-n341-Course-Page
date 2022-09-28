@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<!--
+TITLE: Course Page
+AUTHOR: Andy Jang
+PURPOSE: Class Index Page to Host Lab Work for N341
+NOTE: Based on template provided by instructor
+ORIGINALLY CREATED ON: 01/09/2013
+LAST MODIFIED ON: 10 September 2022
+LAST MODIFIED BY: Andy Jang
+MODIFICATION HISTORY: 
+01/09/2013: Create date
+07/04/2013: Created link for hello world program
+29 Jan 2015: Changed directories to match typhoon structure (LJC)
+06 May 2015: Added comments with instructions to move the css to an external file (LJC)
+14 Jan 2016: Add comment to delete the <style> tags after moving CSS to external file (LJC)
+15 Jan 2018: Resolve CSS validation error (LJC)
+23 Aug 2018: Resolve HTML validation error (LJC)
+27 Aug 2022: Customized webpage for Web Page Redux (ASJ)
+2 Sep 2022: Linked webpage with JS Hello world (ASJ)
+2 Sep 2022: Linked webpage with ID & Styled (ASJ)
+2 Sep 2022: Changed Routing to Refactor Projects (ASJ)
+9 Sep 2022: Added a link to Multi-Write assignment (ASJ)
+10 Sep 2022: Added a link to Conversions assignment (ASJ)
+21 Sep 2022: Added a link to Functions assignment (ASJ)
+27 Sep 2022: Added a link to the Randomness assignment (ASJ)
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>N341 Student Course Page</title>
+
+    <!-- This css provides the colors and formatting for the page.
+     In this class, we will keep our css in an external file.
+     This internal css is included to keep the initial process simple. -->
+    <link rel="stylesheet" type="text/css" href="css/indexStyle.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>CSCI N341 Course Page</h1>
+      <p>By Andy Jang</p>
+    </header>
+    <div id="assignments">
+      <h3>Course Work</h3>
+      <hr />
+      <!-- Draw a horizontal line with formatting defined by css -->
+
+      <ul>
+        <!-- Beginning of unordered list -->
+        <li>
+          <!-- Start of first list item -->
+          <a href="./testFile.html">Test File</a>
+          <!-- link to the Test File To Launch Our N341 Journey -->
+        </li>
+        <!-- End of first list item -->
+
+        <li>
+          <!-- Start of second list item -->
+          <a href="./JS Hello World/jsHelloWorld.html">JS Hello World</a>
+          <!-- link to YOUR jsHelloWorld lab -->
+        </li>
+        <!-- End of second list item -->
+        <li>
+          <a href="./IDed & Styled/idstyle.html">IDed & Styled</a>
+        </li>
+
+        <li>
+          <a href="./Multi-Writes/multiWrites.html">Multi-Writes</a>
+        </li>
+
+        <li>
+          <a href="./Conversions/conversions.html">Conversions</a>
+        </li>
+        <li>
+          <a href="./Functions/functions.html">Functions</a>
+        </li>
+        <li>
+          <a href="./Randomness/randomness.html">Randomness</a>
+        </li>
+      </ul>
+      <!-- End of unordered list -->
+    </div>
+    <!-- end div id="assignments" -->
+  </body>
+</html>

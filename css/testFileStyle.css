@@ -1,0 +1,24 @@
+/*
+TITLE: Test File Styling
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 27 Aug 2022
+PURPOSE: To style the test file html file
+LAST MODIFIED ON: 27 Aug 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+27 Aug 2022 - File creation and basic styling (ASJ)
+*/
+
+/* set background color and font family for entire page */
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+/* restrict dimesions of the image and give it a border */ 
+img {
+  max-width: 500px;
+  max-height: 500px;
+  border: 5px solid #B1E1FF
+}

@@ -1,0 +1,26 @@
+/*
+TITLE: functions.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 9/21/2022
+PURPOSE: To style the functions.html page with basic features
+LAST MODIFIED ON: 9/21/2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+9/21/2022 Initial Build
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+img {
+  width:  auto;
+  height: 500px;
+  object-fit: cover;
+}
+
+.commands {
+  font-size: xx-large;
+}
