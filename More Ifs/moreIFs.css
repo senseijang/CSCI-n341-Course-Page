@@ -1,0 +1,33 @@
+/*
+TITLE: moreIFs.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 4 October 2022
+PURPOSE: To style the moreIFs.html
+LAST MODIFIED ON: 4 October 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+4 October 2022: Initial creation
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.response {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+#ifElse {
+  color: red;
+}
+
+#caseSwitch {
+  color: greenyellow
+}
+
+h1 {
+  margin-bottom: 0px;
+}
