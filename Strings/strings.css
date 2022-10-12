@@ -1,0 +1,28 @@
+/*
+TITLE: Strings.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11 October 2022
+PURPOSE: To style strings.html
+LAST MODIFIED ON: 11 October 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+11 October 2022: Initial creation
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: red;
+}
+
+h2 {
+  color: beige;
+}
+
+p {
+  color: aquamarine;
+}
