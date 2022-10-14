@@ -1,0 +1,54 @@
+/*
+TITLE: Buttons.html
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 14 October 22
+PURPOSE: To style buttons.html
+LAST MODIFIED ON: 14 October 2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+14 October 2022: initial commit
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+/* CSS */
+/* credit to: https://getcssscan.com/css-buttons-examples -> Button 1 by Dribbble */
+button {
+  background-color: #EA4C89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover,
+button:focus {
+  background-color: #F082AC;
+}
+
+p {
+  font-size: xx-large;
+}
