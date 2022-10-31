@@ -1,0 +1,19 @@
+/*
+TITLE: ahoy.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 10-31-22
+PURPOSE: to style ahoy.html
+LAST MODIFIED ON: 10-31-22
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+10-31-22 Initial commit
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: orangered;
+  font-size: x-large;
+  text-shadow: 2px 2px black;
+}
