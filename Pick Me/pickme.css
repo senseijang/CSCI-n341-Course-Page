@@ -1,0 +1,16 @@
+/*
+TITLE: pickme.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/4/2022
+PURPOSE: To style the pickme.html page
+LAST MODIFIED ON: 11/4/2022
+LAST MODIFIED BY: Andy Jang (ASJ)
+MODIFICATION HISTORY:
+11/4/2022 Initial commit
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}

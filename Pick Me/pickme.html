@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+ Filename: pickme.html
+ Written by: Andy Jang (ASJ)
+ Purpose: For use in the pickme lab
+ Date: 11/4/2022
+ Original Build:
+ 11/4/2022 Initial commit
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pick Me!</title>
+
+    <!-- CSS initialization -->
+    <link href="./pickme.css" type="text/css" rel="stylesheet" />
+
+    <!-- JS script initialization -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./pickme.js"></script>
+  </head>
+  <body>
+    <!-- Buttons --->
+    <button type="button" id="button1">Select by Tag</button>
+    <button type="button" id="button2">Select by Class</button>
+    <button type="button" id="button3">Select by ID</button>
+    <button type="button" id="button4">
+      Change color, bold, and add border
+    </button>
+    <br />
+    <button type="button" id="button5">Filtered Selection by Tag</button>
+    <button type="button" id="button6">Filtered Selection by Class</button>
+    <button type="button" id="button7">Filtered Selection by ID</button>
+    <br />
+    <button type="button" id="reset">Reset</button>
+    <!-- HTML Tags -->
+    <div class="group1">
+      <h3 id="noah" class="mod">Noah</h3>
+      <p id="kilyn" class="mod">Kilyn</p>
+      <br />
+      <h3 id="jonf" class="mod">Jonf</h3>
+      <p id="nick" class="mod">Nick</p>
+      <br />
+      <h3 id="pav" class="regular">Pav</h3>
+      <p id="ethin" class="regular">Ethin</p>
+      <br />
+    </div>
+    <div class="group2">
+      <h3 id="bfk" class="random">BFK</h3>
+      <p id="jason" class="random">Jason</p>
+      <br />
+      <h3 id="alex" class="school">Alex</h3>
+      <p id="huna" class="school">Huna</p>
+      <br />
+    </div>
+  </body>
+</html>
