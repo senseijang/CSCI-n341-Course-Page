@@ -1,0 +1,23 @@
+/*
+TITLE: Triggered.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/8/22
+PURPOSE: To style the triggered.html file
+MODIFICATION HISTORY:
+11/8/22 Initial commit
+*/
+
+body {
+	background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 2px 2px white;
+}
+
+#title {
+  border: 3px solid gold;
+}
+
