@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+ Filename: moverShaker.html
+ Written by: Andy Jang (ASJ)
+ Purpose: To play with jQuery effects specified by the Movers and Shakers lab
+ Creation Date: 11/10/22
+ Original Build:
+ 11/10/22 Initial commit
+-->
+
+<!-- Tested in Microsoft Edge, Google Chrome, Mozilla Firefox -->
+<!-- Buttons in Firefox are rounded compared to Edge and Chrome -->
+<!-- Fieldset border is white in Firefox compared to Greenish in Edge and Chrome-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Movers and Shakers!</title>
+
+    <!-- CSS initialization -->
+    <link href="./moverShaker.css" type="text/css" rel="stylesheet" />
+
+    <!-- JS script initialization -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./moverShaker.js"></script>
+  </head>
+  <body>
+    <!-- Form Effect Buttons -->
+    <form>
+      <fieldset>
+        <legend>Effects</legend>
+        <button type="button" id="hide">Hide</button><br />
+        <button type="button" id="show">Show</button><br />
+        <button type="button" id="toggle">Toggle</button><br />
+        <button type="button" id="slideUp">Slide Up</button><br />
+        <button type="button" id="slideDown">Slide Down</button><br />
+        <button type="button" id="fadeOut">Fade Out</button><br />
+        <button type="button" id="fadeIn">Fade In</button><br />
+      </fieldset>
+      <fieldset>
+        <legend>Nav</legend>
+        <button type="button" id="reset">Reset</button><br />
+        <button type="button" id="goBack">Go Back</button><br />
+      </fieldset>
+    </form>
+    <!-- target to manipulate -->
+    <img
+      alt="Picture of Thousand Sunny from One Piece"
+      src="./imgs/thousandSunny-removebg-preview.png"
+      id="target"
+    />
+  </body>
+</html>

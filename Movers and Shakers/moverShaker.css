@@ -1,0 +1,29 @@
+/*
+TITLE: moverShaker.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/10/22
+PURPOSE: To  style moverShaker.html
+MODIFICATION HISTORY:
+11/10/22 Initial commit
+*/
+
+body {
+  background-color: #A66CFF;
+  font-family: "Roboto", sans-serif;
+}
+
+form {
+  text-align: left;
+  display: inline-block;
+}
+
+button {
+  width: 100px;
+  margin-top: 5px;
+}
+
+img {
+  float: right;
+  margin-right: 25%;
+  margin-top: 10%;
+}
