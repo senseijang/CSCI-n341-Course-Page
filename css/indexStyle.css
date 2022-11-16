@@ -13,25 +13,37 @@ MODIFICATION HISTORY:
 * {
 	margin:0 0 6px;
 }
+
+.title {
+	text-shadow: -1px 1px 0 #D6E4E5,
+								1px 1px 0 #D6E4E5,
+								1px -1px 0 #D6E4E5,
+							 -1px -1px 0 #D6E4E5;
+}
  
 header {
 	text-align:left;
-	color:#B1E1FF;
-	background-color:#9C9EFE;
+	color: black;
+	background-color:#497174;
 	padding:30px 150px;
+	text-shadow: -1px 1px 0 #D6E4E5,
+								1px 1px 0 #D6E4E5,
+								1px -1px 0 #D6E4E5,
+							 -1px -1px 0 #D6E4E5;
 }
 
 body {
-	background-color: #A66CFF;
+	background-color: #D6E4E5;
   font-family: "Roboto", sans-serif;
 }
+
 body p {
 	padding-left: 2em;
 }
 
 li, li a {						/* Define the formatting for the links to the labs */
 	list-style: none;
-	background-color: #A66CFF;
+	background-color: #EB6440;
 	text-align: center;
 	color: #B1E1FF;
 	border-radius: 3px;
@@ -45,23 +57,23 @@ h2 {
 }
 
 h3 {
-	color: #A66CFF;
+	color: black;
 	line-height: 30px;
 	text-align: center;
   font-size: 30px;
 }
 
-#assignments {			/* Define the formatting for the <div id="asssignments"> box */
+.workGrid {			/* Define the formatting for the <div id="asssignments"> box */
 	width: 720px;
 	margin: 0 auto;
-	box-shadow: 0 2px 15px #EEE;
+	box-shadow: 0 2px 15px #EB6440;
 	min-height: 300px;
 	padding: 15px;
 	border-radius: 10px;
-	background-color: #AFB4FF;
+	background-color: #497174;
 }
 
-#assignments ul {
+.workGrid ul {
 	float:left;
 	width: 300px;
 }
@@ -70,4 +82,9 @@ hr {						/* Define the formatting for the <hr /> line between "Course Work" and
 	margin: 10px 0;
 	width: 100%;
 	float: left;
+}
+
+#finalProject {
+	background-color: silver;
+	box-shadow: 0 2px 15px black;
 }
