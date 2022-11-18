@@ -104,7 +104,8 @@ $(document).ready(() => {
   $("#ceramic").checkboxradio();
   $("#other").checkboxradio();
 
-  $("submitBtn").click(() => {
+  $("#submitBtn").click(() => {
     $("#outputArea").append("Form submitted!<br>");
+    return false;
   });
 });

@@ -31,3 +31,8 @@ table {
 #submitBtn {
   margin-left: 350px
 }
+
+#outputArea {
+  text-align: center;
+  font-size: 40px;
+}
