@@ -1,0 +1,39 @@
+/*
+TITLE: homepage.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/17/22
+PURPOSE: To style the homepage and add a photo banner
+MODIFICATION HISTORY:
+11/17/22 Initial commit
+*/
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-container {
+  padding-top: 40px;
+  overflow: hidden;
+  max-height: 500px;
+  position: relative;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  bottom: 0;
+}
+
+.tinted {
+  opacity: 0.6;
+}

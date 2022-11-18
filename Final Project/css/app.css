@@ -1,0 +1,59 @@
+/*
+TITLE: app.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/17/22
+PURPOSE: To provide a thematic styling to the entire web application
+MODIFICATION HISTORY:
+11/17/22 Initial commit
+*/
+
+body {
+  font-family: 'Aldrich', sans-serif;
+  background-color: black;
+  color: white
+}
+
+.topnav {
+  background-color: black;
+  text-align: center;
+  z-index: 999;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: white;
+  padding: 14px 16px;
+  font-size: x-large;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: darkblue;
+  color: white
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.header {
+  text-align: center;
+  font-size: 40px;
+}

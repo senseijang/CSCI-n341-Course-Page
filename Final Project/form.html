@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+ Filename: form.html
+ Written by: Andy Jang (ASJ)
+ Purpose: To get user info from a this form and send it to confirmation.html
+ Creation Date: 11/17/22
+ Original Build:
+ 11/17/22 Initial build
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Schdule an Appointment - Clutch Life Detailing</title>
+
+    <!-- CSS initialization -->
+    <link href="./themes/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="./css/app.css" type="text/css" rel="stylesheet" />
+    <link href="./css/form.css" type="text/css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Aldrich"
+      rel="stylesheet"
+    />
+
+    <!-- JS script initialization -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./themes/jquery-ui.js"></script>
+    <script src="./js/form.js"></script>
+  </head>
+  <body>
+    <!-- top nav -->
+    <div class="sticky topnav">
+      <a href="./homepage.html" class="content">Home</a>
+      <a href="./services.html" class="content">Services</a>
+      <a href="./gallery.html" class="content">Gallery</a>
+      <a href="./form.html" class="active content">Schedule Appointment</a>
+      <a href="./login.html" class="content">Login</a>
+    </div>
+    <br /><br /><br />
+    <h1 class="header">Schedule an Appointment</h1>
+    <div class="scheduleForm">
+      <form class="scheduleForm" action="confirmation.html" method="post">
+        <table id="scheduleForm">
+          <colgroup>
+            <col span="1" id="column1" />
+            <col span="1" id="column2" />
+          </colgroup>
+          <!-- name -->
+          <tr>
+            <td>
+              <p><b>Name </b><i>(required)</i></p>
+            </td>
+            <td>
+              <input
+                class="formInput"
+                type="text"
+                id="name"
+                required
+                autofocus
+              />
+            </td>
+          </tr>
+          <!-- email -->
+          <tr>
+            <td>
+              <p><b>Email </b><i>(required)</i></p>
+            </td>
+            <td>
+              <input class="formInput" type="email" id="email" required />
+            </td>
+          </tr>
+          <!-- phone number -->
+          <tr>
+            <td>
+              <p><b>Phone Number</b></p>
+            </td>
+            <td>
+              <input class="formInput" type="tel" id="phoneNumber" />
+            </td>
+          </tr>
+          <!-- car make -->
+          <tr>
+            <td>
+              <p><b>Car Make </b><i>(required):</i></p>
+            </td>
+            <td>
+              <input class="formInput" id="make" type="text" required />
+            </td>
+          </tr>
+          <!-- car model -->
+          <tr>
+            <td>
+              <p><b>Car Model </b><i>(required):</i></p>
+            </td>
+            <td>
+              <input class="formInput" id="model" type="text" required />
+            </td>
+          </tr>
+          <!-- car year using spinner -->
+          <tr>
+            <td>
+              <p><b>Car Year </b><i>(required):</i></p>
+            </td>
+            <td>
+              <input id="year" required />
+            </td>
+          </tr>
+          <!-- services -->
+          <tr>
+            <td>
+              <p><b>Service Inquiries</b><i> (required)</i>:</p>
+            </td>
+            <td>
+              <div id="serviceCheck">
+                <label for="interior">Interior Detailing</label>
+                <input type="checkbox" name="service" id="interior" /><br />
+                <label for="exterior">Exterior Detailing</label>
+                <input type="checkbox" name="service" id="exterior" /><br />
+                <label for="paintCorrection">Paint Correction</label>
+                <input
+                  type="checkbox"
+                  name="service"
+                  id="paintCorrection"
+                /><br />
+                <label for="ceramic">Ceramic Coating</label>
+                <input type="checkbox" name="service" id="ceramic" /><br />
+                <label for="other">Other</label>
+                <input type="checkbox" name="service" id="other" /><br />
+              </div>
+            </td>
+          </tr>
+          <!-- date picker -->
+          <tr>
+            <td>
+              <p><b>Preferred Date </b><i>(required):</i></p>
+            </td>
+            <td>
+              <input id="datepicker" />
+            </td>
+          </tr>
+          <!-- referral -->
+          <tr>
+            <td>
+              <p>
+                <b>How did you hear about us?: </b>
+              </p>
+            </td>
+            <td>
+              <div id="referrals">
+                <input type="radio" id="friends" name="referral" />
+                <label for="friends">Friends / Family</label><br />
+                <input type="radio" id="online" name="referral" />
+                <label for="online">Online</label><br />
+                <input type="radio" id="flyer" name="referral" />
+                <label for="flyer">Flyer</label><br />
+                <input type="radio" id="otherRef" name="referral" checked />
+                <label for="otherRef">Other</label><br />
+              </div>
+            </td>
+          </tr>
+          <!-- any other questions -->
+          <tr>
+            <td>
+              <p><b>Other Inquiries?: </b></p>
+            </td>
+            <td>
+              <br />
+              <textarea
+                class="formInput"
+                rows="10"
+                cols="80"
+                id="userInput"
+              ></textarea>
+            </td>
+          </tr>
+          <!-- reset and submit -->
+          <tr>
+            <td>
+              <input type="reset" id="resetBtn" />
+            </td>
+            <td>
+              <button type="submit" id="submitBtn">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

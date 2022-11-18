@@ -1,0 +1,33 @@
+/*
+TITLE: form.css
+AUTHOR: Andy Jang (ASJ)
+CREATE DATE: 11/17/22
+PURPOSE: To style the form.html file
+MODIFICATION HISTORY:
+11/17/22 Initial commit
+*/
+
+#column1 {
+  width: 30%;
+}
+
+#column2 {
+  width: 70%;
+}
+
+.formInput {
+  width: 70%;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scheduleForm {
+  justify-content: center;
+}
+
+#submitBtn {
+  margin-left: 350px
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+ Filename: login.html
+ Written by: Andy Jang (ASJ)
+ Purpose: To be a login screen for eventual returning customer features
+ Creation Date: 11/17/22
+ Original Build:
+ 11/17/22 Initial build
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login - Clutch Life Detailing</title>
+
+    <!-- CSS initialization -->
+    <link href="./themes/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="./css/app.css" type="text/css" rel="stylesheet" />
+    <link href="./css/login.css" type="text/css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Aldrich"
+      rel="stylesheet"
+    />
+
+    <!-- JS script initialization -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./themes/jquery-ui.js"></script>
+    <script src="./js/login.js"></script>
+  </head>
+  <body>
+    <div class="sticky topnav">
+      <a href="./homepage.html" class="content">Home</a>
+      <a href="./services.html" class="content">Services</a>
+      <a href="./gallery.html" class="content">Gallery</a>
+      <a href="./form.html" class="content">Schedule Appointment</a>
+      <a href="./login.html" class="active content">Login</a>
+    </div>
+    <br /><br /><br />
+    <div id="login">
+      <h1 class="header">Login</h1>
+      <form method="post">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username" required />
+        <br /><br />
+        <label for="password">Password: </label>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          required
+          autocomplete="off"
+        /><br /><br />
+        <button type="submit" id="submitBtn">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
