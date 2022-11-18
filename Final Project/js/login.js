@@ -8,5 +8,10 @@
 ***************************************/
 
 $(() => {
-  $("#submitBtn").button();
+  $("#submitBtn")
+    .button()
+    .click(() => {
+      $("#outputArea").append("Login attempted! <br>");
+      return false;
+    });
 });
