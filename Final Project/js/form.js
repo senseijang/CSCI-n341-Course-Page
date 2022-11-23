@@ -105,7 +105,65 @@ $(document).ready(() => {
   $("#other").checkboxradio();
 
   $("#submitBtn").click(() => {
-    $("#outputArea").append("Form submitted!<br>");
+    appendData();
     return false;
   });
+
+  const appendData = () => {
+    // get all the data
+    const name = $("#name").val();
+    const email = $("#email").val();
+    const phoneNum = $("#phoneNumber").val();
+    const make = $("#make").val();
+    const model = $("#model").val();
+    const year = $("#year").val();
+
+    // multiple selection
+    var services = [];
+    if (document.getElementById(`interior`).checked) {
+      services.push("Interior Detailing");
+    }
+    if (document.getElementById(`exterior`).checked) {
+      services.push("Exterior Detailing");
+    }
+    if (document.getElementById(`paintCorrection`).checked) {
+      services.push("Paint Correction");
+    }
+    if (document.getElementById(`ceramic`).checked) {
+      services.push("Ceramic Coating");
+    }
+    if (document.getElementById(`other`).checked) {
+      services.push("Other");
+    }
+
+    const prefDate = $("#datepicker").val();
+
+    // check for which radio button is checked
+    var referral;
+    if (document.getElementById(`friends`).checked) {
+      referral = "Friends";
+    } else if (document.getElementById(`online`).checked) {
+      referral = "Online";
+    } else if (document.getElementById(`flyer`).checked) {
+      referral = "Flyer";
+    } else if (document.getElementById(`otherRef`).checked) {
+      referral = "Other";
+    } else {
+      referral = "NULL";
+    }
+
+    const additional = $("#userInput").val();
+
+    // append data to output
+    $("#outputArea").append(`<br>Name: ${name}
+                            <br>Email: ${email}
+                            <br>Phone Number: ${phoneNum}
+                            <br>Car Make: ${make}
+                            <br>Car Model: ${model}
+                            <br>Car Year: ${year}
+                            <br>Selected Services: ${services}
+                            <br>Preferred Date: ${prefDate}
+                            <br>Referral: ${referral}
+                            <br>Additional: ${additional}`);
+  };
 });

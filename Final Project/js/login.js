@@ -11,7 +11,12 @@ $(() => {
   $("#submitBtn")
     .button()
     .click(() => {
-      $("#outputArea").append("Login attempted! <br>");
+      // output submission
+      const username = $("#username").val();
+      const password = $("#password").val();
+      $("#outputArea").append(
+        `Username: <br>${username} <br>Password: ${password}`
+      );
       return false;
     });
 });
