@@ -91,79 +91,56 @@ $(document).ready(() => {
   $("#datepicker").datepicker();
 
   // init buttons for form submission and reset
-  $("button").button();
-  $("#resetBtn").button();
+  $("input[type='reset']").button();
 
   // init jQuery radio buttons
   $("#referrals").buttonset();
 
   // init jQuery checkboxes
-  $("#interior").checkboxradio();
-  $("#exterior").checkboxradio();
-  $("#paintCorrection").checkboxradio();
-  $("#ceramic").checkboxradio();
-  $("#other").checkboxradio();
+  $("input[type='checkbox']").checkboxradio();
 
-  $("#submitBtn").click(() => {
-    appendData();
-    return false;
+  $("input[type='submit']").button();
+
+  $.validator.setDefaults({
+    submitHandler: () => {
+      // get all the data
+      const name = $("#name").val();
+      const email = $("#email").val();
+      const phoneNum = $("#phoneNumber").val();
+      const make = $("#make").val();
+      const model = $("#model").val();
+      const year = $("#year").val();
+
+      // multiple selection
+      var services = "";
+      // NOTE: do not use callback functions with jquery, it will reset the DOM idk why
+      $("input[name='service']:checked").each(function () {
+        services += $(this).val() + " ";
+      });
+
+      const prefDate = $("#datepicker").val();
+
+      // check for which radio button is checked
+      const referral = $("input[name='referral']:checked").val();
+
+      const additional = $("#userInput").val();
+
+      // append data to output
+      $("#outputArea").append(`<br>Name: ${name}
+                              <br>Email: ${email}
+                              <br>Phone Number: ${phoneNum}
+                              <br>Car Make: ${make}
+                              <br>Car Model: ${model}
+                              <br>Car Year: ${year}
+                              <br>Selected Services: ${services}
+                              <br>Preferred Date: ${prefDate}
+                              <br>Referral: ${referral}
+                              <br>Additional: ${additional}`);
+      // alert("schedule form has validated");
+    },
+    errorPlacement: (err, elem) => {
+      err.insertAfter(elem);
+    },
   });
-
-  const appendData = () => {
-    // get all the data
-    const name = $("#name").val();
-    const email = $("#email").val();
-    const phoneNum = $("#phoneNumber").val();
-    const make = $("#make").val();
-    const model = $("#model").val();
-    const year = $("#year").val();
-
-    // multiple selection
-    var services = [];
-    if (document.getElementById(`interior`).checked) {
-      services.push("Interior Detailing");
-    }
-    if (document.getElementById(`exterior`).checked) {
-      services.push("Exterior Detailing");
-    }
-    if (document.getElementById(`paintCorrection`).checked) {
-      services.push("Paint Correction");
-    }
-    if (document.getElementById(`ceramic`).checked) {
-      services.push("Ceramic Coating");
-    }
-    if (document.getElementById(`other`).checked) {
-      services.push("Other");
-    }
-
-    const prefDate = $("#datepicker").val();
-
-    // check for which radio button is checked
-    var referral;
-    if (document.getElementById(`friends`).checked) {
-      referral = "Friends";
-    } else if (document.getElementById(`online`).checked) {
-      referral = "Online";
-    } else if (document.getElementById(`flyer`).checked) {
-      referral = "Flyer";
-    } else if (document.getElementById(`otherRef`).checked) {
-      referral = "Other";
-    } else {
-      referral = "NULL";
-    }
-
-    const additional = $("#userInput").val();
-
-    // append data to output
-    $("#outputArea").append(`<br>Name: ${name}
-                            <br>Email: ${email}
-                            <br>Phone Number: ${phoneNum}
-                            <br>Car Make: ${make}
-                            <br>Car Model: ${model}
-                            <br>Car Year: ${year}
-                            <br>Selected Services: ${services}
-                            <br>Preferred Date: ${prefDate}
-                            <br>Referral: ${referral}
-                            <br>Additional: ${additional}`);
-  };
+  $("#scheduleForm").validate();
 });

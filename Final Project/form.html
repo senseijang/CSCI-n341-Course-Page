@@ -24,6 +24,7 @@
     <!-- JS script initialization -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./themes/jquery-ui.js"></script>
+    <script src="./validation/dist/jquery.validate.js"></script>
     <script src="./js/form.js"></script>
   </head>
   <body>
@@ -39,9 +40,8 @@
     <h1 class="header">Schedule an Appointment</h1>
     <div class="scheduleForm">
       <!-- TODO: when we get the custom form validation: split all required fields and not required fields to different forms -->
-      <!-- TODO: add action whenever we can -->
-      <form class="scheduleForm" method="post">
-        <table id="scheduleForm">
+      <form id="scheduleForm">
+        <table>
           <colgroup>
             <col span="1" id="column1" />
             <col span="1" id="column2" />
@@ -73,10 +73,10 @@
           <!-- phone number -->
           <tr>
             <td>
-              <p><b>Phone Number</b></p>
+              <p><b>Phone Number </b><i>(required):</i></p>
             </td>
             <td>
-              <input class="formInput" type="tel" id="phoneNumber" />
+              <input class="formInput" type="tel" id="phoneNumber" required />
             </td>
           </tr>
           <!-- car make -->
@@ -114,19 +114,41 @@
             <td>
               <div id="serviceCheck">
                 <label for="interior">Interior Detailing</label>
-                <input type="checkbox" name="service" id="interior" /><br />
+                <input
+                  type="checkbox"
+                  name="service"
+                  id="interior"
+                  value="interior"
+                /><br />
                 <label for="exterior">Exterior Detailing</label>
-                <input type="checkbox" name="service" id="exterior" /><br />
+                <input
+                  type="checkbox"
+                  name="service"
+                  id="exterior"
+                  value="exterior"
+                />
+                <br />
                 <label for="paintCorrection">Paint Correction</label>
                 <input
                   type="checkbox"
                   name="service"
                   id="paintCorrection"
+                  value="paintCorrection"
                 /><br />
                 <label for="ceramic">Ceramic Coating</label>
-                <input type="checkbox" name="service" id="ceramic" /><br />
+                <input
+                  type="checkbox"
+                  name="service"
+                  id="ceramic"
+                  value="ceramic"
+                /><br />
                 <label for="other">Other</label>
-                <input type="checkbox" name="service" id="other" /><br />
+                <input
+                  type="checkbox"
+                  name="service"
+                  id="other"
+                  value="other"
+                /><br />
               </div>
             </td>
           </tr>
@@ -148,13 +170,29 @@
             </td>
             <td>
               <div id="referrals">
-                <input type="radio" id="friends" name="referral" />
+                <input
+                  type="radio"
+                  id="friends"
+                  name="referral"
+                  value="friends"
+                />
                 <label for="friends">Friends / Family</label><br />
-                <input type="radio" id="online" name="referral" />
+                <input
+                  type="radio"
+                  id="online"
+                  name="referral"
+                  value="online"
+                />
                 <label for="online">Online</label><br />
-                <input type="radio" id="flyer" name="referral" />
+                <input type="radio" id="flyer" name="referral" value="flyer" />
                 <label for="flyer">Flyer</label><br />
-                <input type="radio" id="otherRef" name="referral" checked />
+                <input
+                  type="radio"
+                  id="otherRef"
+                  name="referral"
+                  value="other"
+                  checked
+                />
                 <label for="otherRef">Other</label><br />
               </div>
             </td>
@@ -180,7 +218,7 @@
               <input type="reset" id="resetBtn" />
             </td>
             <td>
-              <button type="submit" id="submitBtn">Submit</button>
+              <input type="submit" id="submitBtn" />
             </td>
           </tr>
         </table>
