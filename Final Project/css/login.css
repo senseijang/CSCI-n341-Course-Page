@@ -7,10 +7,21 @@ MODIFICATION HISTORY:
 11/17/22 Initial commit
 */
 
-#login {
+.login {
   text-align: center;
 }
 
 #outputArea {
   text-align: center;
+}
+
+fieldset {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input {
+  margin-left: 5%;
+  margin-right: auto;
 }

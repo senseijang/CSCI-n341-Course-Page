@@ -7,6 +7,6 @@
  11/17/22 Initial commit
 ***************************************/
 
-$(document).ready(() => {
+$(document).ready(function () {
   $("#services").accordion();
 });

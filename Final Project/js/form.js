@@ -5,9 +5,10 @@
  PURPOSE: To implement jQuery UI into the form.html file
  MODIFICATION HISTORY:
  11/17/22 Initial commit
+ 12/1/2022 custom form validation
 ***************************************/
 
-$(document).ready(() => {
+$(document).ready(function () {
   // the car makes for the autocorrect widget
   const makes = [
     "Abarth",
@@ -83,7 +84,7 @@ $(document).ready(() => {
 
   // init spinner for car year
   $("#year").spinner({
-    min: 1970,
+    min: 1990,
     max: 2024,
   });
 
@@ -101,8 +102,12 @@ $(document).ready(() => {
 
   $("input[type='submit']").button();
 
+  // set default validator
   $.validator.setDefaults({
-    submitHandler: () => {
+    /*
+     * submitHandler mirrors all the data the user inputs if and only if everything is correctly validated
+     */
+    submitHandler: function () {
       // get all the data
       const name = $("#name").val();
       const email = $("#email").val();
@@ -138,9 +143,106 @@ $(document).ready(() => {
                               <br>Additional: ${additional}`);
       // alert("schedule form has validated");
     },
-    errorPlacement: (err, elem) => {
-      err.insertAfter(elem);
+
+    /*
+     * errorPlacement is a function that appends an error message below each input field if a requirement isn't met.
+     *
+     * @param: err is an error that the validator throws
+     * @param: elem is the element that the error was thrown from
+     */
+    errorPlacement: function (err, elem) {
+      switch (elem.attr("id")) {
+        case "name":
+          err.insertAfter($("#nameError"));
+          break;
+        case "email":
+          err.insertAfter($("#emailError"));
+          break;
+        case "phoneNumber":
+          err.insertAfter($("#phoneError"));
+          break;
+        case "make":
+          err.insertAfter($("#makeError"));
+          break;
+        case "model":
+          err.insertAfter($("#modelError"));
+          break;
+        case "year":
+          err.insertAfter($("#yearError"));
+          break;
+        case "services":
+          err.insertAfter($("#serviceError"));
+          break;
+        case "datepicker":
+          err.insertAfter($("#dateError"));
+          break;
+        default:
+          err.insertAfter(elem);
+          break;
+      }
     },
   });
-  $("#scheduleForm").validate();
+
+  /*
+   * this is the validation function that passes the object that contains the rules and messages associated with each input field.
+   */
+  $("#scheduleForm").validate({
+    rules: {
+      // rules that inputs must follow
+      name: { required: true, maxlength: 20 }, // <input name="name">
+      email: { required: true, email: true }, // <input name="email">
+      phoneNumber: { required: true, maxlength: 10, digits: true }, // <input name="phoneNumber">
+      make: { required: true, maxlength: 20 }, // <input name="make">
+      model: { required: true, maxlength: 20 }, // <input name="model">
+      year: { required: true, digits: true, maxlength: 4, minlength: 4 }, // <input name="year">
+      services: { required: true }, // <input name="services">
+      prefDate: { required: true, date: true }, // <input name="prefDate">
+      additional: { required: false, maxlength: 150 }, // <input name="additional">
+    },
+    // messages to show when a certain validation fails
+    messages: {
+      name: {
+        required: "Please enter a name",
+        maxlength: $.validator.format("Must not have more than {0} characters"),
+      },
+      email: {
+        required: "Please enter an email",
+        email: "Please enter a valid email address",
+      },
+      phoneNumber: {
+        required: "Please enter a phone number",
+        digits: "Please enter numbers only",
+        maxlength: $.validator.format(
+          "Phone number cannot be longer than {0} characters"
+        ),
+      },
+      make: {
+        required: "Please enter your car make",
+        maxlength: $.validator.format(
+          "Make cannot be longer than {0} characters"
+        ),
+      },
+      model: {
+        required: "Please enter your car model",
+        maxlength: $.validator.format(
+          "Model cannot be longer than {0} characters"
+        ),
+      },
+      year: {
+        required: "Please enter your car year",
+        digits: "Please enter a valid car year",
+        minlength: "Car year must be 4 digits",
+      },
+      services: {
+        required: "Please specify at least 1 inquiry",
+      },
+      prefDate: {
+        required: "Please enter a date",
+        date: "Please enter a valid date",
+      },
+      additional: {
+        maxlength: $.validator.format("Must not go past {0} characters"),
+      },
+    },
+  });
 });

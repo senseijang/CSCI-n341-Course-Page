@@ -10,10 +10,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Schdule an Appointment - Clutch Life Detailing</title>
+    <title>Schedule an Appointment - Clutch Life Detailing</title>
 
     <!-- CSS initialization -->
-    <link href="./themes/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="./theme/jquery-ui.css" type="text/css" rel="stylesheet" />
     <link href="./css/app.css" type="text/css" rel="stylesheet" />
     <link href="./css/form.css" type="text/css" rel="stylesheet" />
     <link
@@ -23,7 +23,7 @@
 
     <!-- JS script initialization -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./themes/jquery-ui.js"></script>
+    <script src="./theme/jquery-ui.js"></script>
     <script src="./validation/dist/jquery.validate.js"></script>
     <script src="./js/form.js"></script>
   </head>
@@ -39,7 +39,6 @@
     <br /><br /><br />
     <h1 class="header">Schedule an Appointment</h1>
     <div class="scheduleForm">
-      <!-- TODO: when we get the custom form validation: split all required fields and not required fields to different forms -->
       <form id="scheduleForm">
         <table>
           <colgroup>
@@ -56,9 +55,12 @@
                 class="formInput"
                 type="text"
                 id="name"
+                name="name"
                 required
                 autofocus
               />
+              <br />
+              <div id="nameError" class="error"></div>
             </td>
           </tr>
           <!-- email -->
@@ -67,7 +69,15 @@
               <p><b>Email </b><i>(required)</i></p>
             </td>
             <td>
-              <input class="formInput" type="email" id="email" required />
+              <input
+                class="formInput"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+              <br />
+              <div id="emailError" class="error"></div>
             </td>
           </tr>
           <!-- phone number -->
@@ -76,7 +86,15 @@
               <p><b>Phone Number </b><i>(required):</i></p>
             </td>
             <td>
-              <input class="formInput" type="tel" id="phoneNumber" required />
+              <input
+                class="formInput"
+                type="tel"
+                id="phoneNumber"
+                required
+                name="phoneNumber"
+              />
+              <br />
+              <div id="phoneError" class="error"></div>
             </td>
           </tr>
           <!-- car make -->
@@ -85,7 +103,15 @@
               <p><b>Car Make </b><i>(required):</i></p>
             </td>
             <td>
-              <input class="formInput" id="make" type="text" required />
+              <input
+                class="formInput"
+                id="make"
+                type="text"
+                required
+                name="make"
+              />
+              <br />
+              <div id="makeError" class="error"></div>
             </td>
           </tr>
           <!-- car model -->
@@ -94,7 +120,15 @@
               <p><b>Car Model </b><i>(required):</i></p>
             </td>
             <td>
-              <input class="formInput" id="model" type="text" required />
+              <input
+                class="formInput"
+                id="model"
+                type="text"
+                required
+                name="model"
+              />
+              <br />
+              <div id="modelError" class="error"></div>
             </td>
           </tr>
           <!-- car year using spinner -->
@@ -103,7 +137,9 @@
               <p><b>Car Year </b><i>(required):</i></p>
             </td>
             <td>
-              <input id="year" required />
+              <input id="year" required name="year" />
+              <br />
+              <div id="yearError" class="error"></div>
             </td>
           </tr>
           <!-- services -->
@@ -116,14 +152,14 @@
                 <label for="interior">Interior Detailing</label>
                 <input
                   type="checkbox"
-                  name="service"
+                  name="services"
                   id="interior"
                   value="interior"
                 /><br />
                 <label for="exterior">Exterior Detailing</label>
                 <input
                   type="checkbox"
-                  name="service"
+                  name="services"
                   id="exterior"
                   value="exterior"
                 />
@@ -131,24 +167,26 @@
                 <label for="paintCorrection">Paint Correction</label>
                 <input
                   type="checkbox"
-                  name="service"
+                  name="services"
                   id="paintCorrection"
                   value="paintCorrection"
                 /><br />
                 <label for="ceramic">Ceramic Coating</label>
                 <input
                   type="checkbox"
-                  name="service"
+                  name="services"
                   id="ceramic"
                   value="ceramic"
                 /><br />
                 <label for="other">Other</label>
                 <input
                   type="checkbox"
-                  name="service"
+                  name="services"
                   id="other"
                   value="other"
                 /><br />
+                <br /><br />
+                <div id="serviceError" class="error"></div>
               </div>
             </td>
           </tr>
@@ -158,7 +196,9 @@
               <p><b>Preferred Date </b><i>(required):</i></p>
             </td>
             <td>
-              <input id="datepicker" />
+              <input id="datepicker" autocomplete="off" name="prefDate" />
+              <br />
+              <div id="dateError" class="error"></div>
             </td>
           </tr>
           <!-- referral -->
@@ -209,6 +249,7 @@
                 rows="10"
                 cols="80"
                 id="userInput"
+                name="additional"
               ></textarea>
             </td>
           </tr>

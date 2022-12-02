@@ -6,6 +6,7 @@
  Creation Date: 11/17/22
  Original Build:
  11/17/22 Initial build
+ 12/1/22 jQuery Custom Validation
 -->
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
     <title>Login - Clutch Life Detailing</title>
 
     <!-- CSS initialization -->
-    <link href="./themes/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="./theme/jquery-ui.css" type="text/css" rel="stylesheet" />
     <link href="./css/app.css" type="text/css" rel="stylesheet" />
     <link href="./css/login.css" type="text/css" rel="stylesheet" />
     <link
@@ -21,9 +22,9 @@
       rel="stylesheet"
     />
 
-    <!-- JS script initialization -->
+    <!-- JS initialization -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="./themes/jquery-ui.js"></script>
+    <script src="./theme/jquery-ui.js"></script>
     <script src="./validation/dist/jquery.validate.js"></script>
     <script src="./js/login.js"></script>
   </head>
@@ -36,22 +37,29 @@
       <a href="./login.html" class="active content">Login</a>
     </div>
     <br /><br /><br />
-    <div id="login">
-      <h1 class="header">Login</h1>
+    <div class="login">
+      <h1 class="header" id="loginHeader">Login</h1>
       <form id="login">
-        <label for="username">Username: </label>
-        <input type="email" name="username" id="username" required />
-        <br /><br />
-        <label for="password">Password: </label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          autocomplete="off"
-        /><br /><br />
-        <input type="reset" id="resetBtn" />
-        <input type="submit" id="submitBtn" />
+        <fieldset>
+          <label for="userName">Username: </label>
+          <input type="text" name="userName" id="userName" required />
+          <br />
+          <div id="userError"></div>
+          <br />
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            autocomplete="off"
+          />
+          <br />
+          <div id="passError"></div>
+          <br />
+          <input type="reset" class="buttons" />
+          <input type="submit" class="buttons" />
+        </fieldset>
       </form>
     </div>
     <div id="outputArea">
