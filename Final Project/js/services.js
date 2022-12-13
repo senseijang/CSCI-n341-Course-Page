@@ -8,5 +8,6 @@
 ***************************************/
 
 $(document).ready(function () {
+  // initialize the accordian menu for the services tab
   $("#services").accordion();
 });

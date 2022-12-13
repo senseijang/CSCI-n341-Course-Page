@@ -6,101 +6,108 @@
  MODIFICATION HISTORY:
  11/17/22 Initial commit
  12/1/2022 custom form validation
+ 12/13/2022 commenting, polishing, and clean up
 ***************************************/
 
 $(document).ready(function () {
-  // the car makes for the autocorrect widget
-  const makes = [
-    "Abarth",
-    "Alfa Romeo",
-    "Aston Martin",
-    "Audi",
-    "Bentley",
-    "BMW",
-    "Bugatti",
-    "Cadillac",
-    "Chevrolet",
-    "Chrysler",
-    "Citroën",
-    "Dacia",
-    "Daewoo",
-    "Daihatsu",
-    "Dodge",
-    "Donkervoort",
-    "DS",
-    "Ferrari",
-    "Fiat",
-    "Fisker",
-    "Ford",
-    "Honda",
-    "Hummer",
-    "Hyundai",
-    "Infiniti",
-    "Iveco",
-    "Jaguar",
-    "Jeep",
-    "Kia",
-    "KTM",
-    "Lada",
-    "Lamborghini",
-    "Lancia",
-    "Land Rover",
-    "Landwind",
-    "Lexus",
-    "Lotus",
-    "Maserati",
-    "Maybach",
-    "Mazda",
-    "McLaren",
-    "Mercedes-Benz",
-    "MG",
-    "Mini",
-    "Mitsubishi",
-    "Morgan",
-    "Nissan",
-    "Opel",
-    "Peugeot",
-    "Porsche",
-    "Renault",
-    "Rolls-Royce",
-    "Rover",
-    "Saab",
-    "Seat",
-    "Skoda",
-    "Smart",
-    "SsangYong",
-    "Subaru",
-    "Suzuki",
-    "Tesla",
-    "Toyota",
-    "Volkswagen",
-    "Volvo",
-  ];
+  /*
+   * This anonymous IIFE function initializes all of the needed jQuery UI elements.
+   */
+  (function () {
+    // the car makes for the autocorrect widget
+    const makes = [
+      "Abarth",
+      "Alfa Romeo",
+      "Aston Martin",
+      "Audi",
+      "Bentley",
+      "BMW",
+      "Bugatti",
+      "Cadillac",
+      "Chevrolet",
+      "Chrysler",
+      "Citroën",
+      "Dacia",
+      "Daewoo",
+      "Daihatsu",
+      "Dodge",
+      "Donkervoort",
+      "DS",
+      "Ferrari",
+      "Fiat",
+      "Fisker",
+      "Ford",
+      "Honda",
+      "Hummer",
+      "Hyundai",
+      "Infiniti",
+      "Iveco",
+      "Jaguar",
+      "Jeep",
+      "Kia",
+      "KTM",
+      "Lada",
+      "Lamborghini",
+      "Lancia",
+      "Land Rover",
+      "Landwind",
+      "Lexus",
+      "Lotus",
+      "Maserati",
+      "Maybach",
+      "Mazda",
+      "McLaren",
+      "Mercedes-Benz",
+      "MG",
+      "Mini",
+      "Mitsubishi",
+      "Morgan",
+      "Nissan",
+      "Opel",
+      "Peugeot",
+      "Porsche",
+      "Renault",
+      "Rolls-Royce",
+      "Rover",
+      "Saab",
+      "Seat",
+      "Skoda",
+      "Smart",
+      "SsangYong",
+      "Subaru",
+      "Suzuki",
+      "Tesla",
+      "Toyota",
+      "Volkswagen",
+      "Volvo",
+    ];
 
-  // init autocorrect
-  $("#make").autocomplete({
-    source: makes,
-  });
+    // init autocorrect
+    $("#make").autocomplete({
+      source: makes,
+    });
 
-  // init spinner for car year
-  $("#year").spinner({
-    min: 1990,
-    max: 2024,
-  });
+    // init spinner for car year
+    $("#year").spinner({
+      min: 1990,
+      max: 2024,
+    });
 
-  // init datepicker for appt scheduler
-  $("#datepicker").datepicker();
+    // init datepicker for appt scheduler
+    $("#datepicker").datepicker();
 
-  // init buttons for form submission and reset
-  $("input[type='reset']").button();
+    // init buttons for form submission and reset
+    $("input[type='reset']").button();
 
-  // init jQuery radio buttons
-  $("#referrals").buttonset();
+    // init jQuery radio buttons
+    $("#referrals").buttonset();
 
-  // init jQuery checkboxes
-  $("input[type='checkbox']").checkboxradio();
+    // init jQuery checkboxes
+    $("input[type='checkbox']").checkboxradio();
 
-  $("input[type='submit']").button();
+    // init jQuery submit button
+    $("input[type='submit']").button();
+  })();
 
   // set default validator
   $.validator.setDefaults({
@@ -109,25 +116,28 @@ $(document).ready(function () {
      */
     submitHandler: function () {
       // get all the data
-      const name = $("#name").val();
-      const email = $("#email").val();
-      const phoneNum = $("#phoneNumber").val();
-      const make = $("#make").val();
-      const model = $("#model").val();
-      const year = $("#year").val();
+      const name = $("#name").val(); // name of user
+      const email = $("#email").val(); // email of user
+      const phoneNum = $("#phoneNumber").val(); // phone number of user
+      const make = $("#make").val(); // make of user's car
+      const model = $("#model").val(); // model of user's car
+      const year = $("#year").val(); // year of user's car
 
       // multiple selection
       var services = "";
       // NOTE: do not use callback functions with jquery, it will reset the DOM idk why
-      $("input[name='service']:checked").each(function () {
+      // append all checked services to a string.
+      $("input[name='services']:checked").each(function () {
         services += $(this).val() + " ";
       });
 
+      // date of appointment.
       const prefDate = $("#datepicker").val();
 
       // check for which radio button is checked
       const referral = $("input[name='referral']:checked").val();
 
+      // additional text input field
       const additional = $("#userInput").val();
 
       // append data to output
@@ -191,7 +201,12 @@ $(document).ready(function () {
       // rules that inputs must follow
       name: { required: true, maxlength: 20 }, // <input name="name">
       email: { required: true, email: true }, // <input name="email">
-      phoneNumber: { required: true, maxlength: 10, digits: true }, // <input name="phoneNumber">
+      phoneNumber: {
+        required: true,
+        minlength: 10,
+        maxlength: 10,
+        digits: true,
+      }, // <input name="phoneNumber">
       make: { required: true, maxlength: 20 }, // <input name="make">
       model: { required: true, maxlength: 20 }, // <input name="model">
       year: { required: true, digits: true, maxlength: 4, minlength: 4 }, // <input name="year">
@@ -215,6 +230,7 @@ $(document).ready(function () {
         maxlength: $.validator.format(
           "Phone number cannot be longer than {0} characters"
         ),
+        minlength: $.validator.format("Phone number must be {0} characters"),
       },
       make: {
         required: "Please enter your car make",

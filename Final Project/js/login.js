@@ -6,6 +6,7 @@
  MODIFICATION HISTORY:
  11/17/22 Initial commit
  12/1/22 jQuery Custom Validations
+ 12/13/2022 commenting, polishing, and clean up
 ***************************************/
 
 $(document).ready(function () {
@@ -18,16 +19,26 @@ $(document).ready(function () {
 
   // set validator
   $.validator.setDefaults({
+    /*
+     * submitHandler is a function in which it is executed when the submit button is pressed.
+     * the handler checks the data against the rules provided when calling the validate function.
+     */
     submitHandler: function () {
       // output submission
-      const username = $("#userName").val();
-      const password = $("#password").val();
+      const username = $("#userName").val(); // string username
+      const password = $("#password").val(); // string password
       $("#outputArea").append(
         `Username: ${username} <br>Password: ${password} <br><br>`
       );
       //alert("login validated");
     },
-    // put errors below the input field
+    /*
+     * errorPlacement defines where an error message should go for each element.
+     * As there are only 2 fields only need to account for the 2 fields so a ternary operator can be used.
+     *
+     * @param: err is the error that is thrown.
+     * @param: elem is the element to position the error message around.
+     */
     errorPlacement: function (err, elem) {
       elem.attr("id") == "userName"
         ? err.insertAfter($("#userError"))
